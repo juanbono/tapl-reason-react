@@ -1,0 +1,17 @@
+
+.note {
+    font-size: 11px;
+    font-style: italic;
+    color: blue;
+}
+
+.result {
+    font-size: 25px;
+    font-family: monospace;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(37, 240, 37);
+}
+
+.prompt {
+    font-size: 25px;
+}
