@@ -24,7 +24,6 @@ open Syntax
 %token EOF
 %token LPAREN
 %token RPAREN
-%token SEMICOLON
 
 /* ---------------------------------------------------------------------- */
 /* The starting production of the generated parser is the syntactic class

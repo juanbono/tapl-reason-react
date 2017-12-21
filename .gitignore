@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 
+# generated code
+/src/**.mli
+/src/**.ml
+
 # testing
 /coverage
 

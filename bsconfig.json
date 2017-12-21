@@ -16,7 +16,12 @@
     "generators": [
       {
         "name": "menhir",
-        "edge": ["arith/arithParser.ml", "arith/arithParser.mli", ":", "arith/arithParser.mly"]
+        "edge": [
+          "arith/arithParser.ml",
+          "arith/arithParser.mli",
+          ":",
+          "arith/arithParser.mly"
+        ]
       },
       {
         "name": "ocamllex",

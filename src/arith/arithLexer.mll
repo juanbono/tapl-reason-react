@@ -6,7 +6,6 @@
 
 rule token = parse
 | [' ' '\t' '\n'] { token lexbuf}
-| ';' { SEMICOLON }
 | "true" { TRUE }
 | "false" { FALSE }
 | "succ" { SUCC }
