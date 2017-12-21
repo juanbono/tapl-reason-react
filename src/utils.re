@@ -5,18 +5,14 @@ let str = ReasonReact.stringToElement;
 [@bs.module "./registerServiceWorker"]
 external register_service_worker : unit => unit = "default";
 
-let valueFromEvent = evt : string => (
-                                       evt
-                                       |> ReactEventRe.Form.target
-                                       |> ReactDOMRe.domElementToObj
-                                     )##value;
+let object_of_event = evt =>
+  evt |> ReactEventRe.Form.target |> ReactDOMRe.domElementToObj;
+
+let valueFromEvent = evt : string =>
+  evt |> object_of_event |> (obj => obj##value);
 
 let parseAndEval = userInput =>
   switch (Main.parseString(userInput)) {
   | None => "Parse Error!!!"
-  | Some(result) =>
-    result
-    |> List.hd
-    |> (cmd => cmd |> Syntax.term_of_command |> Core.eval)
-    |> Syntax.show
+  | Some(result) => result |> Core.eval |> Syntax.show
   };

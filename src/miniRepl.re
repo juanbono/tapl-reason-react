@@ -1,32 +1,28 @@
 open Utils;
 
-[%bs.raw {|require('./miniRepl.css')|}];
+requireCSS("./miniRepl.css");
 
-type state = {userInput: string};
+type state = string;
 
 type action =
-  | SubmitProgram(string);
+  | Submit(string);
 
 let component = ReasonReact.reducerComponent("MiniREPL");
 
 let make = _children => {
   ...component,
-  initialState: () => {userInput: ""},
+  initialState: () => "",
   reducer: (action, _) =>
     switch action {
-    | SubmitProgram(programString) =>
-      ReasonReact.Update({userInput: parseAndEval(programString)})
+    | Submit(program) => ReasonReact.Update(parseAndEval(program))
     },
   render: self =>
     <div className="REPL">
-      <p className="note">
-        (str("Ingrese su programa, seguido del caracter ';'"))
-      </p>
-      <Input onSubmit=(self.reduce(userInput => SubmitProgram(userInput))) />
+      <p className="note"> (str("Ingrese su programa")) </p>
+      <Input onSubmit=(self.reduce(userInput => Submit(userInput))) />
       <p className="prompt">
         (str({js|▶|js} ++ "  "))
-        <code className="result"> (str(self.state.userInput)) </code>
+        <code className="result"> (str(self.state)) </code>
       </p>
     </div>
 };
-

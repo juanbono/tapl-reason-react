@@ -1,7 +1,6 @@
-
 open Utils;
 
-[%bs.raw {|require('./app.css')|}];
+requireCSS("./app.css");
 
 [@bs.module] external logo : string = "./logo.svg";
 

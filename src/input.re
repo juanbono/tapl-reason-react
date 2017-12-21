@@ -10,7 +10,7 @@ let make = (~onSubmit, _) => {
     <input
       value=self.state
       _type="text"
-      onChange=self.reduce(Utils.valueFromEvent)
+      onChange=(self.reduce(Utils.valueFromEvent))
       onKeyPress=(
         evt =>
           if (ReactEventRe.Keyboard.key(evt) == "Enter") {

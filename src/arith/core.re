@@ -1,4 +1,3 @@
-
 open Syntax;
 
 /* ------------------------   EVALUATION  ------------------------ */
@@ -11,7 +10,7 @@ let rec isnumericval = t =>
   | _ => false
   };
 
-let rec isval = t =>
+let isval = t =>
   switch t {
   | TmTrue => true
   | TmFalse => true
@@ -21,8 +20,8 @@ let rec isval = t =>
 
 let rec eval1 = t =>
   switch t {
-  | TmIf(TmTrue, t2, t3) => t2
-  | TmIf(TmFalse, t2, t3) => t3
+  | TmIf(TmTrue, t2, _) => t2
+  | TmIf(TmFalse, _, t3) => t3
   | TmIf(t1, t2, t3) =>
     let t1' = eval1(t1);
     TmIf(t1', t2, t3);
