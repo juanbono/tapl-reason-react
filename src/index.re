@@ -1,7 +1,3 @@
-open Utils;
+Utils.requireCSS("./index.css");
 
-requireCSS("./index.css");
-
-ReactDOMRe.renderToElementWithId(<App message="Arith" />, "root");
-
-register_service_worker();
+ReactDOMRe.renderToElementWithId(<App />, "root");

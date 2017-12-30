@@ -2,23 +2,67 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 2s linear;
-  height: 80px;
+.app-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "repl   ast";
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 40% 60%;
+  grid-row-gap: 0.7em;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.app-header {
+  grid-area: header;
+  background-color: tan;
+  text-align: center;
 }
 
-.App-intro {
+.app-header > h1 {
+  color: black;
+  border: red 1px solid;
+}
+
+.app-column2 {
+  display: subgrid;
+  grid-area: ast;
+  background-color: green;
+  text-align: center;
+}
+
+.app-column1 {
+  display: grid;
+  grid-area: repl;
+  background-color: black;
+  text-align: left;
   font-size: large;
+  grid-template-rows: 50% 50%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.repl {
+  overflow-y: scroll;
+}
+
+.terminal-input {
+  display: flex;
+  overflow: hidden;
+}
+
+.terminal-input-area {
+  overflow-y: hidden;
+}
+.terminal-input > input {
+  display: flex;
+  width: 100vw;
+  border: 0px;
+}
+
+.app-column1 > :nth-child(even) {
+  background-color: aqua;
+}
+.app-column1 > :nth-child(odd) {
+  background-color: rgb(251, 255, 192);
 }

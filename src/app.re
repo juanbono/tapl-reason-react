@@ -2,36 +2,29 @@ open Utils;
 
 requireCSS("./app.css");
 
-[@bs.module] external logo : string = "./logo.svg";
-
 let component = ReasonReact.statelessComponent("App");
 
-let make = (~message, _children) => {
+let make = _children => {
   ...component,
   render: _self =>
-    <div className="App">
-      <div className="App-header">
-        <img src=logo className="App-logo" alt="logo" />
-        <h2> (str(message)) </h2>
+    <div className="app-container">
+      <div className="app-header">
+        <h1> (str("Types and Programming Languages")) </h1>
       </div>
-      <p className="App-intro">
-        <code> (str("t ::= ")) </code>
-        <code> (str("    0")) </code>
-        <code> (str("    |  if <t> then <t> else <t>")) </code>
-        <code> (str("    | iszero <t>")) </code>
-        <code> (str("    | pred <t>")) </code>
-        <code> (str("    | succ <t>")) </code>
-      </p>
-      <MiniRepl />
+      <div className="app-column1">
+        <Repl
+          className="repl"
+          languagePrompt="Arith>"
+          commands=[("saludar", () => "hola")]
+        />
+        <div className="column1-row2">
+          (
+            Utils.str(
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, cum! Illo, repellat earum minus, provident nemo, quas eos expedita nesciunt ratione voluptate consectetur aliquid. Quidem quam modi, delectus nihil aspernatur consectetur culpa odio dolore, molestiae porro facere impedit, voluptatibus voluptates excepturi officiis quaerat in voluptatem? Beatae doloremque fugit facilis soluta.\nLorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, cum! Illo, repellat earum minus, provident nemo, quas eos expedita nesciunt ratione voluptate consectetur aliquid. Quidem quam modi, delectus nihil aspernatur consectetur culpa odio dolore, molestiae porro facere impedit, voluptatibus voluptates excepturi officiis quaerat in voluptatem? Beatae doloremque fugit facilis soluta.\n        "
+            )
+          )
+        </div>
+      </div>
+      <div className="app-column2"> <MiniRepl /> </div>
     </div>
 };
-/* Examples for testing
-
-   true;
-   if false then true else false;
-
-   0;
-   succ (pred 0);
-   iszero (pred (succ (succ 0)));
-
-   */

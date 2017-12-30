@@ -4,8 +4,8 @@
 /node_modules
 
 # generated code
-/src/**.mli
-/src/**.ml
+**.mli
+**.ml
 
 # testing
 /coverage

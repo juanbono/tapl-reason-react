@@ -29,7 +29,7 @@
       }
     ]
   },
-  "bs-dependencies": ["reason-react", "bs-jest"],
+  "bs-dependencies": ["reason-react", "bs-jest", "bs-nice"],
   "reason": {
     "react-jsx": 2
   },

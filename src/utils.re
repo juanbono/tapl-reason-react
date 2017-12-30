@@ -2,9 +2,6 @@ let str = ReasonReact.stringToElement;
 
 [@bs.val] external requireCSS : string => unit = "require";
 
-[@bs.module "./registerServiceWorker"]
-external register_service_worker : unit => unit = "default";
-
 let object_of_event = evt =>
   evt |> ReactEventRe.Form.target |> ReactDOMRe.domElementToObj;
 

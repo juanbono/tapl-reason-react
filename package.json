@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bs-nice": "^0.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "reason-scripts": "0.8.0"
+    "react-typist": "^2.0.4",
+    "reason-scripts": "0.8.0",
+    "terminal-in-react": "^3.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
