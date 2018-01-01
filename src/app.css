@@ -64,5 +64,5 @@
   background-color: aqua;
 }
 .app-column1 > :nth-child(odd) {
-  background-color: rgb(251, 255, 192);
+  background-color: black;
 }

@@ -6,16 +6,14 @@ export default class ReplComponent extends React.Component {
     return (
       <div className={this.props.className}>
         <Terminal
-          color="black"
-          backgroundColor="rgb(251, 255, 192)"
+          color={this.props.color}
+          backgroundColor={this.props.backgroundColor}
           promptSymbol={this.props.languagePrompt}
-          allowTabs={false}
-          hideTopBar={true}
+          allowTabs={this.props.allowTabs}
+          hideTopBar={this.props.hideTopBar}
           style={this.props.styles}
           commands={this.props.commands}
-          descriptions={{
-            help: "shows the help message"
-          }}
+          descriptions={this.props.descriptions}
         />
       </div>
     );
